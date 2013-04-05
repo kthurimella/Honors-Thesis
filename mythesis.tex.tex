@@ -1,0 +1,128 @@
+\documentclass[defaultstyle,12pt]{thesis}
+
+\usepackage{amssymb}		% to get all AMS symbols
+\usepackage{graphicx}		% to insert figures
+
+%%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
+
+\title{Using Rule Induction to Elucidate Co-Occurrence Patterns in Microbial
+Data}
+
+\author{K.~Kumar}{Thurimella}
+
+\degree{Bachelors of Science}		%  #1 {long descr.}
+	{B.S., Applied Mathematics}		%  #2 {short descr.}
+
+\dept{Department of}			%  #1 {designation}
+	{Applied Mathematics}		%  #2 {name}
+
+\advisor{Associate Professor}				%  #1 {title}
+	{Rob Knight}			%  #2 {name}
+
+\reader{Professor~Michael Mozer}		%  2nd person to sign thesis
+\readerThree{Senior~Instructor~Anne Dougherty}		%  3rd person to sign thesis
+
+\abstract{  \OnePageChapter	% because it is very short
+    Several studies have addressed whether the presence or absence of certain bacteria are
+    linked with a particular phenotype. However, it is plausible that
+    the causitive agent (or the consequence) of a given phenotype is not
+    a single microbe, but groups of them. Rule Induction is a commonly used
+    machine learning tool to infer structure within observational
+    data and build rules to represent respective structures. In this thesis I
+    introduce the application of a method, Rule Induction, to infer co-occurrence patterns in microbial data.
+    \\ \indent First, I benchmark the methods within Rule Induction and
+    understand how rules are generated with regards to several parameters such
+    as table density, support and confidence. I then subsample data over
+    multiple iterations to understand the robustness of the rules being
+    presented and preserved over each sampling. 
+    \\ \indent Next, I provide insight into different biological variables and
+    examine their effect on rules produced. I compare 16s rRNA region,
+    specficially V1-3 and V3-5 regions. I compare different sequencing
+    technology, specifically 454 and Illumina. I finally compare time,
+    specifically looking over 400 days. Within all these comparisons I aim to
+    understand the differences, but more importantly what is conserved within
+    these variables by the means of rules generated.
+    
+    \\ \indent Finally, I explore Rule Induction on two microbial datasets and
+    see how strong the rules are in comparison to already known associations.
+    The first dataset I interpret regards a correlation between HIV and the Gut
+    Microbiome. The second dataset distinguishes the Gut Microbiome over varying
+    georgraphical locations. I link each of these rules produced from each
+    dataset with taxonomic information and consildate those rules to give rise
+    the underlying structure within the biological data. }
+
+\dedication[Dedication]{	% NEVER use \OnePageChapter here.
+	To my family and friends.
+	}
+
+\acknowledgements{
+	\indent First and foremost I would like to thank Rob Knight
+	for letting me be a part of his lab. He has been a fantastic mentor
+	and someone who I look up to very much. His passion for research is contageous
+	and I have learned so much in my time here, and am very fascinated and
+	intruiged by the research being done in the microbiome field in addition 
+	to this lab. I would like to thank Mike Mozer for being a great
+	mentor as well, by giving me great advice specific to this project
+	as well as general life advice. My final committee member, Anne Dougherty,
+	has been nothing short of a phenomenal advisor. It is after talking to her
+	my sophomore year that I switched my major to Applied Mathematics. She has
+	consistently provided great support and I can go to her about anything like 
+	another friend.
+	\\ \indent I would like to thank Jose Clemente for his ideas, support and
+	fabulous mentoring. I have learned a lot from Jose with regards to his perspective 
+	on being a researcher. Will van Trueren has been nothing but a great friend and
+	peer mentor in the lab all the while providing great insights to this research.
+	I want to finally thank other members of this lab including Yoshiki Baeza for
+	his help understanding cluster computing, Cathy Lozupone for her HIV data and
+	insight within co-occurrence and many others who were always there for
+	support. I want to acknowledge the Gautam Dantas Lab at
+	Washington University in St. Louis, specifically Kevin Forsberg and Mitch Pesesky. This past summer
+	opened my eyes to exciting avenues of research and that experience provided the
+	direction of research that I continue to this day.
+	\\ \indent Without my close friends I wouldn't be where I
+	am at today. Thanks to my roommates David Gillis and Thomas Lynn for helping
+	me out this year. Oriel Eisner for always being interested in (or putting
+	with) our late night talks, mostly regarding science. Many thanks Sathish Subramanian for being a
+	fantastic role model and providing help and support whenever I needed it, 
+	as well as late night life talks. I hope to be half the MD/PhD student he is,
+	one day. Will Timbers has always been incredibly fun to talk with and has
+	pushed me to pursue my passions. Andrew Fleming has shared a same passion for
+	science with me in high school and I appreciate all of his support over the years. Without Myke Samuels I don't know where I would be, and it was because of his help that I
+	found my passion and interests and for that I am forever grateful.
+	\\ \indent Finally thanks to my brother and parents. Coming from a family of
+	computer scientists certainly rubs off and because of all their love and support I have
+	been able to develop my own passions.}
+
+\ToCisShort	% use this only for 1-page Table of Contents
+
+\LoFisShort	% use this only for 1-page Table of Figures
+% \emptyLoF	% use this if there is no List of Figures
+
+\LoTisShort	% use this only for 1-page Table of Tables
+% \emptyLoT	% use this if there is no List of Tables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%       BEGIN DOCUMENT...         %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{Sweave}
+\begin{document}
+
+\input macros.tex
+\input chapter1.tex
+\input chapter2.tex
+
+%%%%%%%%%   then the Bibliography, if any   %%%%%%%%%
+\bibliographystyle{plain}	% or "siam", or "alpha", etc.
+\nocite{*}		% list all refs in database, cited or not
+\bibliography{refs}		% Bib database in "refs.bib"
+
+
+%%%%%%%%%   then the Appendices, if any   %%%%%%%%%
+\appendix
+\input appendixA.tex
+\input appendixB.tex
+
+
+\end{document}
+
